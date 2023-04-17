@@ -3,18 +3,19 @@
       <div class="flex justify-center items-center py-6 md:justify-start md:space-x-10">
         <!-- STORE NAME / STORE LOGO -->
         <div class="flex justify-start lg:flex-1 truncate">
-          <h1 class="text-xl font-bold truncate">STORE Beth</h1>
+          <h1 class="text-xl font-bold truncate">{{ shop.name }}</h1>
         </div>
   
         <!-- NAVIGATION MENU -->
         <nav class="hidden md:flex space-x-10">
-          <div class="relative">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Link 1</a>
-          </div>
+          {% for link in linklists.main-menu.links %}
+            <div class="relative">
+              <a href={{ link.url }} class="text-base text-gray-500 hover:text-gray-900">Link 1</a>
+            </div>
+          {% endfor %}
+          
   
-          <div class="relative">
-            <a href="#" class="text-base text-gray-500 hover:text-gray-900">Link 1</a>
-          </div>
+         
   
           <div class="relative">
             <button type="button" class="inline-flex items-center text-base text-gray-500 hover:text-gray-900">
